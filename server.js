@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken')
 
 // The greater the number, the harder the password is to crack
 const saltRounds = 10
-const testHash = "$2b$10$Nqel0GJ1M0WKBTqmmTXvreL2UpFe1OdOQtok45gRa7Cx3m6MRZOh6"
+const testHash = "$2b$10$6EAu7G5DwqoI5DSRFpowL.1TEqWDmjAgzUf7LHRb6cUpXasLcKxqS"
 
 // Lets us send json with express
 app.use(express.json())
@@ -71,7 +71,7 @@ app.post('/login', (req, res) => {
 })
 
 // Purpose is to protect endpoints to prevent unwanted access
-app.post('/token', (req,response) => {
+app.post('/token', (req,res) => {
     const refreshToken = req.body.token
 
     // Check refresh token
